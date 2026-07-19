@@ -1,23 +1,24 @@
 {
-  "name": "men-auth-template",
+  "name": "Gym-Logger",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [],
+  "homepage": "https://github.com/SEB-14-Bahrain/men-auth-template#readme",
+  "bugs": {
+    "url": "https://github.com/SEB-14-Bahrain/men-auth-template/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SEB-14-Bahrain/men-auth-template.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/SEB-14-Bahrain/men-auth-template/issues"
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "homepage": "https://github.com/SEB-14-Bahrain/men-auth-template#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "connect-mongo": "^6.0.0",

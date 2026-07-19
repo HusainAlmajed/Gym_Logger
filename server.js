@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const session = require('express-session')
 const { MongoStore } = require('connect-mongo')
+app.use(express.static('public'))  // add this line if it's not already there
 
 const authCtrl = require('./controllers/auth')
 
@@ -20,6 +21,11 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
+
+const passUserToView = require('./middleware/pass-user-to-view.js')
+// server.js
+
+const isSignedIn = require('./middleware/is-signed-in.js')
 
 // Middleware to parse URL-encoded data from forms
 app.use(express.urlencoded({ extended: false }));
@@ -35,6 +41,8 @@ app.use(session({
         mongoUrl: process.env.MONGODB_URI
     }),
 }))
+
+app.use(passUserToView) // use your custom middleware here
 
 app.get('/', (req, res) => {
     res.render('home.ejs', {
