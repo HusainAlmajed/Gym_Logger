@@ -12,6 +12,7 @@ app.use(express.static('public'))  // add this line if it's not already there
 
 const authCtrl = require('./controllers/auth')
 const workoutCtrl = require('./controllers/workout.js')
+const exerciseCtrl = require('./controllers/exercise.js')
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -63,6 +64,11 @@ app.get('/workouts/new', isSignedIn, workoutCtrl.showForm)
 app.post('/workouts', isSignedIn, workoutCtrl.create)
 app.get('/workouts', isSignedIn, workoutCtrl.index)
 app.get('/workouts/:workoutId', isSignedIn, workoutCtrl.workoutView)
+
+//Exercises
+app.get('/workouts/:workoutId/exercises/new' , isSignedIn , exerciseCtrl.showForm)
+app.post('/workouts/:workoutId/exercises' , isSignedIn , exerciseCtrl.create)
+
 
 app.get('/dashboard', async (req, res) => {
     if (!req.session.user){

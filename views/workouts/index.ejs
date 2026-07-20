@@ -4,7 +4,9 @@
     <li>
       <a href="/workouts/<%= workout._id %>">
         <%= workout.workoutType %>
-      </a>
+        -
+        <%= workout.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: '2-digit' }) %>   
+    </a>
     </li>
   <% }) %>
 </ul>

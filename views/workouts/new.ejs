@@ -9,7 +9,15 @@
     <form action="/workouts" method="POST">
 
         <label>Workout Type:</label>
-        <input type="text" name="workoutType">
+        <select name="workoutType">
+            <option value="Legs">Legs</option>
+            <option value="Back">Back</option>
+            <option value="Shoulders">Shoulders</option>
+            <option value="Biceps">Biceps</option>
+            <option value="Triceps">Triceps</option>
+            <option value="Chest">Chest</option>
+        </select>
+        <!-- <input type="text" name="workoutType"> -->
 
         <label>Done:</label>
         <input type="checkbox" name="isDone">

@@ -11,15 +11,13 @@ const create = async (req , res) => {
     const workoutData = {}
 
     workoutData.workoutType = req.body.workoutType 
-    workoutData.isDone = req.body.isDone
+    workoutData.isDone = req.body.isDone == 'on'
     workoutData.date = req.body.date
     workoutData.owner = req.session.user._id
 
     let createdWorkout = await Workouts.create(workoutData)
 
-    console.log(createdWorkout)
-    res.redirect('/workouts')
-
+    res.redirect(`/workouts/${createdWorkout._id}/exercises/new`)
 }
 
 // to show the workouts

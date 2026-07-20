@@ -17,6 +17,11 @@ const exerciseSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
+    workout: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Workout',
+        required: true,
+    },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
