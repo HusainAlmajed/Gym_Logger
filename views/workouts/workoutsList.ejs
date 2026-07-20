@@ -1,0 +1,11 @@
+<h1><%= foundWorkout.workoutType %></h1>
+<p><%= foundWorkout.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: '2-digit' }) %>   
+
+<h2>Exercises</h2>
+<ul>
+  <% foundExercises.forEach((item) => { %>
+    <li><%= item.exerciseName %> — <%= item.sets %> sets <%= item.reps %> reps <%= item.weight %>kg</li>
+  <% }) %>
+</ul>
+
+<a href="/workouts/<%= foundWorkout._id %>/exercises/new">➕ Add Another Exercise</a>

@@ -1,5 +1,7 @@
 const { render } = require('ejs')
 const Workouts = require('../models/workout')
+const Exercises = require('../models/exercise')
+
 
 // For displaying a form to take user input
 const showForm = (req , res) => {
@@ -34,8 +36,13 @@ const index = async (req, res) => {
 
 const workoutView = async (req , res) => {
     const foundWorkout = await Workouts.findById(req.params.workoutId).populate('owner')
+    const foundExercises = await Exercises.find({
+        workout: req.params.workoutId,
+    })
+
     res.render('workouts/workoutsList.ejs' , {
         foundWorkout,
+        foundExercises,
     })
 
 }
