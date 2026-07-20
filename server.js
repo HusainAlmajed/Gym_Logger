@@ -11,6 +11,7 @@ const { MongoStore } = require('connect-mongo')
 app.use(express.static('public'))  // add this line if it's not already there
 
 const authCtrl = require('./controllers/auth')
+const workoutCtrl = require('./controllers/workout.js')
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -55,6 +56,12 @@ app.post('/auth/sign-up', authCtrl.signUp)
 app.get('/auth/sign-in', authCtrl.showSignInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.delete('/auth/sign-out', authCtrl.signOut)
+
+
+//Workouts
+
+app.get('/workouts/new' , workoutCtrl.showForm)
+
 
 app.get('/dashboard', async (req, res) => {
     if (!req.session.user){

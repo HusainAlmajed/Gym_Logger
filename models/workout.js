@@ -7,7 +7,7 @@ const workoutSchema = new mongoose.Schema({
     },
     isDone: {
         type: Boolean,
-        required: true,
+        default: false,
     },
     date: {
         type: Date,

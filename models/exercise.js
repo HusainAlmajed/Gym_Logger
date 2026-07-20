@@ -18,6 +18,10 @@ const exerciseSchema = new mongoose.Schema({
         require: true,
     },
     owner: {
-        
+
     }
 })
+
+const Exercises = mongoose.model('Exercises' , exerciseSchema)
+
+module.exports = Exercises
