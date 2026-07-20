@@ -18,7 +18,8 @@ const exerciseSchema = new mongoose.Schema({
         require: true,
     },
     owner: {
-
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
     }
 })
 

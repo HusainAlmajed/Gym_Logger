@@ -1,0 +1,10 @@
+<h1>My Workouts</h1>
+<ul>
+  <% workoutData.forEach(workout => { %>
+    <li>
+      <a href="/workouts/<%= workout._id %>">
+        <%= workout.workoutType %>
+      </a>
+    </li>
+  <% }) %>
+</ul>

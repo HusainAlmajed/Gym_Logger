@@ -59,9 +59,10 @@ app.delete('/auth/sign-out', authCtrl.signOut)
 
 
 //Workouts
-
-app.get('/workouts/new' , workoutCtrl.showForm)
-
+app.get('/workouts/new', isSignedIn, workoutCtrl.showForm)
+app.post('/workouts', isSignedIn, workoutCtrl.create)
+app.get('/workouts', isSignedIn, workoutCtrl.index)
+app.get('/workouts/:workoutId', isSignedIn, workoutCtrl.workoutView)
 
 app.get('/dashboard', async (req, res) => {
     if (!req.session.user){
