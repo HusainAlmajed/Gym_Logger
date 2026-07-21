@@ -46,7 +46,7 @@ const editExercise = async (req , res) => {
 
 const updateExercise = async (req, res) => {
     const exerciseData = {}
-    
+
     exerciseData.exerciseName = req.body.exerciseName
     exerciseData.weight = req.body.weight
     exerciseData.sets = req.body.sets
@@ -56,11 +56,21 @@ const updateExercise = async (req, res) => {
     res.redirect(`/workouts/${updatedExercise.workout}`)
 }
 
+const deleteExercise = async (req , res) => {
+    // maybe it will be used to verify user
+    // const foundExercises = await Exercises.findById(req.params.exerciseId)
+    const workout = req.params.workoutId
+
+    await Exercises.findByIdAndDelete(req.params.exerciseId)
+    res.redirect(`workouts/<=% workout %>`)
+}
+
 module.exports = {
     showForm,
     create,
     index,
     editExercise,
     updateExercise,
+    deleteExercise,
 
 }
