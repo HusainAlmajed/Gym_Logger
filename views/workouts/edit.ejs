@@ -6,7 +6,7 @@
     <title>Edit Workout</title>
 </head>
 <body>
-    <form action="/workouts" method="POST">
+    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
 
         <label>Workout Type:</label>
         <select name="workoutType">

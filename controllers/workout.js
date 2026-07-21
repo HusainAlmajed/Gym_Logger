@@ -22,6 +22,18 @@ const create = async (req , res) => {
     res.redirect(`/workouts/${createdWorkout._id}/exercises/new`)
 }
 
+const updateWorkout = async (req, res) => {
+    const workoutData = {}
+
+    workoutData.workoutType = req.body.workoutType 
+    workoutData.isDone = req.body.isDone == 'on'
+    workoutData.date = req.body.date
+
+    const updatedWorkout = await Workouts.findByIdAndUpdate(req.params.workoutId, workoutData)
+    console.log('Updated Is:' , updateWorkout)
+    res.redirect(`/workouts/${req.params.workoutId}`)
+}
+
 // to show the workouts
 const index = async (req, res) => {
     let workoutData = await Workouts.find({
@@ -57,16 +69,6 @@ const editWorkout = async (req , res) => {
         Exercises: Exercises,
     })
 
-}
-
-const updateWorkout = async (req, res) => {
-    const workoutData = {}
-    workoutData.workoutType = req.body.workoutType
-    workoutData.isDone = req.body.isDone
-    workoutData.date = req.body.date
-
-    const updatedWorkout = await Workouts.findByIdAndUpdate(req.params.workoutId, workoutData)
-    res.redirect(`/workouts/${req.params.workoutId}`)
 }
 
 const deleteWorkout = async (req , res) => {
