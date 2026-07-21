@@ -1,17 +1,17 @@
 <h1>Edit Exercise</h1>
 
-<form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
+<form action="/exercises/<%= foundExercises._id %>?_method=PUT" method="POST">
     <label>Exercise Name:</label>
-    <input type="text" name="exerciseName" value="<%= exercise.exerciseName %>">
+    <input type="text" name="exerciseName" value="<%= foundExercises.exerciseName %>">
 
     <label>Weight KG:</label>
-    <input type="number" name="weight" value="<%= exercise.weight %>">
+    <input type="number" name="weight" value="<%= foundExercises.weight %>">
 
     <label>#Sets:</label>
-    <input type="number" name="sets" value="<%= exercise.sets %>">
+    <input type="number" name="sets" value="<%= foundExercises.sets %>">
 
     <label>#Reps</label>
-    <input type="number" name="reps" value="<%= exercise.reps %>">
+    <input type="number" name="reps" value="<%= foundExercises.reps %>">
 
     <button type="submit">Update Exercise</button>
 </form>

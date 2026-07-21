@@ -38,10 +38,21 @@ const editExercise = async (req , res) => {
     const foundWorkout = await Workouts.findById(req.params.workoutId).populate('owner')
 
     res.render('exercises/edit.ejs' , {
-        foundExercises: foundExercises.$assertPopulated,
+        foundExercises: foundExercises,
         foundWorkout: foundWorkout,
     })
 
+}
+
+const updateExercise = async (req, res) => {
+    const exerciseData = {}
+    exerciseData.exerciseName = req.body.exerciseName
+    exerciseData.weight = req.body.weight
+    exerciseData.sets = req.body.sets
+    exerciseData.reps = req.body.reps
+
+    const updatedExercise = await Exercises.findByIdAndUpdate(req.params.exerciseId, exerciseData)
+    res.redirect(`/workouts/${updatedExercise.workout}`)
 }
 
 module.exports = {
@@ -49,5 +60,6 @@ module.exports = {
     create,
     index,
     editExercise,
+    updateExercise,
 
 }
