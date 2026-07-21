@@ -62,7 +62,7 @@ const deleteExercise = async (req , res) => {
     const workout = req.params.workoutId
 
     await Exercises.findByIdAndDelete(req.params.exerciseId)
-    res.redirect(`workouts/<=% workout %>`)
+    res.redirect(`/workouts/${req.params.workoutId}`)
 }
 
 module.exports = {
