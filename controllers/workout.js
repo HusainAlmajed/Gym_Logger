@@ -57,7 +57,16 @@ const editWorkout = async (req , res) => {
         Exercises: Exercises,
     })
 
+}
 
+const updateWorkout = async (req, res) => {
+    const workoutData = {}
+    workoutData.workoutType = req.body.workoutType
+    workoutData.isDone = req.body.isDone
+    workoutData.date = req.body.date
+
+    const updatedWorkout = await Workouts.findByIdAndUpdate(req.params.workoutId, workoutData)
+    res.redirect(`/workouts/${req.params.workoutId}`)
 }
 
 const deleteWorkout = async (req , res) => {
@@ -77,6 +86,7 @@ module.exports = {
     index,
     workoutView,
     editWorkout,
+    updateWorkout,
     deleteWorkout,
 
 }
