@@ -73,6 +73,7 @@ app.delete('/workouts/:workoutId' , workoutCtrl.deleteWorkout)
 app.get('/workouts/:workoutId/exercises/new' , isSignedIn , exerciseCtrl.showForm)
 app.post('/workouts/:workoutId/exercises' , isSignedIn , exerciseCtrl.create)
 app.get('/workouts/:workoutId/exercises/:exerciseId/edit', isSignedIn, exerciseCtrl.editExercise)
+app.put('/workouts/:workoutId/exercises/:exerciseId' , isSignedIn , exerciseCtrl.updateExercise)
 app.post('/workouts/:workoutId/exercises/:exerciseId', isSignedIn, exerciseCtrl.updateExercise)
 
 app.get('/dashboard', async (req, res) => {

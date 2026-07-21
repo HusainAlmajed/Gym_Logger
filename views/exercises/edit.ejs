@@ -1,6 +1,6 @@
 <h1>Edit Exercise</h1>
 
-<form action="/exercises/<%= foundExercises._id %>?_method=PUT" method="POST">
+<form action="/workouts/<%= foundWorkout._id %>/exercises/<%= foundExercises._id %>?=PUT" method="POST">
     <label>Exercise Name:</label>
     <input type="text" name="exerciseName" value="<%= foundExercises.exerciseName %>">
 

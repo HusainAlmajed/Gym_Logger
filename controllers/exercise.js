@@ -46,6 +46,7 @@ const editExercise = async (req , res) => {
 
 const updateExercise = async (req, res) => {
     const exerciseData = {}
+    
     exerciseData.exerciseName = req.body.exerciseName
     exerciseData.weight = req.body.weight
     exerciseData.sets = req.body.sets
