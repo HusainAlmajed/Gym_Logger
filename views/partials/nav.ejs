@@ -1,11 +1,12 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
 <nav>
   <a href="/">Home</a>
 
   <% if (user) { %>
-    <a href="/listings">All Listings</a>
-    <a href="/listings/new">Create a Listing</a>
-    <a href="/users/profile">My Profile</a>
-    <a href="/auth/sign-out">Sign Out</a>
+    <a href="/workouts">All Workouts</a>
+    <a href="/workouts/new">Add a Workout</a>
+    <!-- <a href="/users/profile">My Profile</a> -->
+    <!-- <a href="/auth/sign-out">Sign Out</a> -->
   <% } else { %>
     <a href="/auth/sign-in">Sign In</a>
     <a href="/auth/sign-up">Sign Up</a>
