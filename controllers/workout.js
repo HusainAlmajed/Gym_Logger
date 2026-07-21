@@ -47,10 +47,36 @@ const workoutView = async (req , res) => {
 
 }
 
+const editWorkout = async (req , res) => {
+    const foundExercises = await Exercises.findById(req.params.exerciseId)
+    const foundWorkout = await Workouts.findById(req.params.workoutId).populate('owner')
+
+    res.render('workouts/edit.ejs' , {
+        foundExercises: foundExercises,
+        workout: foundWorkout,
+        Exercises: Exercises,
+    })
+
+
+}
+
+const deleteWorkout = async (req , res) => {
+    const foundWorkout = await Workouts.findById(req.params.workoutId)
+
+    if(foundWorkout.owner.equals(req.session.user._id)) {
+
+        await Workouts.findByIdAndDelete(req.params.workoutId)
+        res.redirect('/workouts')
+    }
+
+}
+
 module.exports = {
     showForm,
     create,
     index,
     workoutView,
+    editWorkout,
+    deleteWorkout,
 
 }

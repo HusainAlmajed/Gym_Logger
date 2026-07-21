@@ -9,6 +9,7 @@ const showForm = async (req , res) => {
     res.render('exercises/new.ejs' , {
         Workouts: Workouts,
         workout: workout,
+        Exercises: Exercises,
     })
 }
 

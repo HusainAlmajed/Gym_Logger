@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Workout</title>
+</head>
+<body>
+    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+
+        <label>Workout Type:</label>
+        <select name="workoutType">
+            <option value="Legs">Legs</option>
+            <option value="Back">Back</option>
+            <option value="Shoulders">Shoulders</option>
+            <option value="Biceps">Biceps</option>
+            <option value="Triceps">Triceps</option>
+            <option value="Chest">Chest</option>
+        </select>
+
+        <label>Done:</label>
+        <input type="checkbox" name="isDone" <%= workout.isDone ? 'checked' : '' %>>
+
+        <label>Date:</label>
+        <input type="date" name="date">
+
+        <button type="submit">Update Workout</button>
+
+    </form>
+</body>
+</html>
