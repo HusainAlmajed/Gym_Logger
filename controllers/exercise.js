@@ -27,8 +27,27 @@ const create = async (req , res) => {
     res.redirect(`/workouts/${req.params.workoutId}`)
 }
 
+const index = async (req , res) => {
+    let exerciseData = await Exercises.find({
+        owner: req.session.user._id,
+    })
+}
+
+const editExercise = async (req , res) => {
+    const foundExercises = await Exercises.findById(req.params.exerciseId)
+    const foundWorkout = await Workouts.findById(req.params.workoutId).populate('owner')
+
+    res.render('exercises/edit.ejs' , {
+        foundExercises: foundExercises.$assertPopulated,
+        foundWorkout: foundWorkout,
+    })
+
+}
+
 module.exports = {
     showForm,
     create,
+    index,
+    editExercise,
 
 }

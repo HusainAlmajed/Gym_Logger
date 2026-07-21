@@ -6,7 +6,7 @@
     <title>Edit Workout</title>
 </head>
 <body>
-    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+    <form action="/workouts" method="POST">
 
         <label>Workout Type:</label>
         <select name="workoutType">
@@ -17,14 +17,15 @@
             <option value="Triceps">Triceps</option>
             <option value="Chest">Chest</option>
         </select>
+        <!-- <input type="text" name="workoutType"> -->
 
         <label>Done:</label>
         <input type="checkbox" name="isDone" <%= workout.isDone ? 'checked' : '' %>>
 
         <label>Date:</label>
-        <input type="date" name="date">
+        <input type="date" name="date" value="<%= workout.date.toISOString().split('T')[0] %>">
 
-        <button type="submit">Update Workout</button>
+        <button type="submit">Add Workout</button>
 
     </form>
 </body>
