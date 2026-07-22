@@ -98,6 +98,14 @@ app.get('/dashboard', async (req, res) => {
     })
 })
 
+// This should be at the end, where if were not matching any of the routes above
+// This will appear
+app.get('/*splat' , (req , res) => {
+    res.render('error.ejs' , {
+        msg: 404
+    })
+})
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
