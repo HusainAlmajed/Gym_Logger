@@ -15,7 +15,7 @@ body {
     height: 600px;
 }
 
-.sign-inBox {
+.sign-inBox , .sign-upBox {
     width: 400px;
     padding: 40px;
     background-color: #1f3b57;
