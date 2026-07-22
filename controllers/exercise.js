@@ -68,8 +68,6 @@ const confirmDelete = async (req , res) => {
 }
 
 const deleteExercise = async (req , res) => {
-    // maybe it will be used to verify user
-    // const foundExercises = await Exercises.findById(req.params.exerciseId)
     const workout = req.params.workoutId
 
     await Exercises.findByIdAndDelete(req.params.exerciseId)
