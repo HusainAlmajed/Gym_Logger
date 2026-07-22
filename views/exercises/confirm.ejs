@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/confirmPage.css">
     <title>Confirm Delete</title>
 </head>
 <body>
+<div class="box">
     <h1>Are you sure you want to delete the exercise?</h1>
-    
+    <h3><%= foundExercise.exerciseName %></h3>
+    <div class="click">
     <form action="/workouts/<%= foundWorkout._id %>/exercises/<%= foundExercise._id %>?_method=DELETE" method="POST">
         <button type="submit">YES</button>
     </form>
 
     <a href="/workouts/<%= foundWorkout._id %>">No</a>
-
+    </div>
+</div>
 </body>
 </html
