@@ -42,7 +42,9 @@ h1 {
 }
 
 select,
-input[type="date"] {
+input[type="date"],
+input[type="text"],
+input[type="number"] {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;

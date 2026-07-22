@@ -1,18 +1,40 @@
-<title>New Exercise</title>
-<h1>Exercises</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/newForm.css">
+    <title>New Exercise</title>
+</head>
+<body>
+<div class="box">
+    <form action="/workouts/<%= workout._id %>/exercises" method="POST" class="formBox">
 
-<form action="/workouts/<%= workout._id %>/exercises" method="POST">
-    <label>Exercise Name:</label>
-    <input type="text" name="exerciseName" minlength="3" required>
-    <label>Weight KG:</label>
-    <input type="number" name="weight" min="0" required>
+        <h1>Add Exercise</h1>
 
-    <label>#Sets:</label>
-    <input type="number" name="sets" min="0" required>
+        <div class="type">
+            <label>Exercise Name:</label>
+            <input type="text" name="exerciseName" minlength="3" required>
+        </div>
 
-    <label>#Reps</label>
-    <input type="number" name="reps" min="0" required>
+        <div class="type">
+            <label>Weight (KG):</label>
+            <input type="number" name="weight" min="0" required>
+        </div>
 
-    <button type="submit">Add Exercise</button>
+        <div class="type">
+            <label>#Sets:</label>
+            <input type="number" name="sets" min="0" required>
+        </div>
 
-</form>
+        <div class="date">
+            <label>#Reps:</label>
+            <input type="number" name="reps" min="0" required>
+        </div>
+
+        <button type="submit">Add Exercise</button>
+
+    </form>
+</div>
+</body>
+</html>
