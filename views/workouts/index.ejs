@@ -1,5 +1,7 @@
 <%- include('../partials/nav') %>
 
+<title>My workouts</title>
+
 <link rel="stylesheet" href="/stylesheets/workouts.css">
 
 <div class="container">
@@ -8,7 +10,7 @@
     <h1>My Workouts</h1>
     <a href="/workouts/new" class="btn primary">+ Add Workout</a>
   </div>
-  
+
   <% if (workoutData.length === 0) { %>
     <p class="empty">No workouts yet. Start logging</p>
   <% } else { %>

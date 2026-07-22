@@ -1,26 +1,57 @@
 <%- include('../partials/nav') %>
-
 <title><%= foundWorkout.workoutType %></title>
 
-<h1><%= foundWorkout.workoutType %></h1>
-<p><%= foundWorkout.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: '2-digit' }) %>   
-<p>Workout status: <%= foundWorkout.isDone %></p>
-<h2>Exercises</h2>
-<ul>
-  <% foundExercises.forEach((item) => { %>
-    <li><%= item.exerciseName %> — <%= item.sets %> sets <%= item.reps %> reps <%= item.weight %>kg</li>
-    <a href="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>/edit">Edit</a>
-<a href="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>/delete">
-    <button type="submit">Delete</button>
-</a>  
-<% }) %>
-</ul>
+<link rel="stylesheet" href="/stylesheets/workoutsList.css">
 
-<a href="/workouts/<%= foundWorkout._id %>/exercises/new">➕ Add Another Exercise</a>
-<a href="/workouts/<%= foundWorkout._id %>/edit">Edit Workout</a>
-<a href="/workouts/<%= foundWorkout._id %>/delete">
-    <button type="button">Delete</button>
-</a>
+<div class="container">
 
-<a href="/workouts">Workouts List</a>
+  <h1 class="title"><%= foundWorkout.workoutType %></h1>
 
+  <p class="date">
+    <%= foundWorkout.date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'numeric',
+      year: '2-digit'
+    }) %>
+  </p>
+
+  <p class="status">
+    Status: 
+    <span class="<%= foundWorkout.isDone ? 'done' : 'not-done' %>">
+      <%= foundWorkout.isDone ? 'Completed' : 'Not Done' %>
+    </span>
+  </p>
+
+  <h2>Exercises</h2>
+
+  <ul class="exerciseList">
+    <% foundExercises.forEach((item) => { %>
+      <li class="exerciseCard">
+        <div class="exerciseInfo">
+          <strong><%= item.exerciseName %></strong>
+          <p><%= item.sets %> sets • <%= item.reps %> reps • <%= item.weight %>kg</p>
+        </div>
+
+        <div class="exercisess">
+          <a href="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>/edit" class="edit-btn">Edit</a>
+
+          <a href="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>/delete">
+            <button class="deleteBtn">Delete</button>
+          </a>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+
+  <div class="actions">
+    <a href="/workouts/<%= foundWorkout._id %>/exercises/new" class="btn primary">+ Add Exercise</a>
+    <a href="/workouts/<%= foundWorkout._id %>/edit" class="btn secondary">Edit Workout</a>
+
+    <a href="/workouts/<%= foundWorkout._id %>/delete">
+      <button class="btn danger">Delete Workout</button>
+    </a>
+  </div>
+
+  <a href="/workouts" class="return">Back to Workouts</a>
+
+</div>
