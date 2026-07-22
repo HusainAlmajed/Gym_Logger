@@ -6,9 +6,9 @@
   <% foundExercises.forEach((item) => { %>
     <li><%= item.exerciseName %> — <%= item.sets %> sets <%= item.reps %> reps <%= item.weight %>kg</li>
     <a href="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>/edit">Edit</a>
-<form action="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>?_method=DELETE" method="POST">
+<a href="/workouts/<%= foundWorkout._id %>/exercises/<%= item._id %>/delete">
     <button type="submit">Delete</button>
-</form>  
+</a>  
 <% }) %>
 </ul>
 

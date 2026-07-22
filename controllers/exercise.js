@@ -56,6 +56,17 @@ const updateExercise = async (req, res) => {
     res.redirect(`/workouts/${updatedExercise.workout}`)
 }
 
+const confirmDelete = async (req , res) => {
+    const foundExercise = await Exercises.findById(req.params.exerciseId)
+    const foundWorkout = await Workouts.findById(req.params.workoutId)
+
+    res.render('exercises/confirm.ejs' , {
+        foundExercise: foundExercise,
+        foundWorkout: foundWorkout,
+    })
+
+}
+
 const deleteExercise = async (req , res) => {
     // maybe it will be used to verify user
     // const foundExercises = await Exercises.findById(req.params.exerciseId)
@@ -72,5 +83,6 @@ module.exports = {
     editExercise,
     updateExercise,
     deleteExercise,
+    confirmDelete,
 
 }
