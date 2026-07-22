@@ -1,18 +1,34 @@
 <title>Edit Exercise</title>
-<h1>Edit Exercise</h1>
+<link rel="stylesheet" href="/stylesheets/newForm.css">
 
-<form action="/workouts/<%= foundWorkout._id %>/exercises/<%= foundExercises._id %>?=PUT" method="POST">
-    <label>Exercise Name:</label>
-    <input type="text" name="exerciseName" value="<%= foundExercises.exerciseName %>">
+<div class="box">
 
-    <label>Weight KG:</label>
-    <input type="number" name="weight" value="<%= foundExercises.weight %>">
 
-    <label>#Sets:</label>
-    <input type="number" name="sets" value="<%= foundExercises.sets %>">
+<form action="/workouts/<%= foundWorkout._id %>/exercises/<%= foundExercises._id %>?=PUT" method="POST" class="formBox">
 
-    <label>#Reps</label>
-    <input type="number" name="reps" value="<%= foundExercises.reps %>">
+    <h1>Edit Exercise</h1>
+
+    <div class="type">
+        <label>Exercise Name:</label>
+        <input type="text" name="exerciseName" value="<%= foundExercises.exerciseName %>">
+    </div>
+
+    <div class="type">
+        <label>Weight KG:</label>
+        <input type="number" name="weight" value="<%= foundExercises.weight %>">
+    </div>
+
+    <div class="type">
+        <label>#Sets:</label>
+        <input type="number" name="sets" value="<%= foundExercises.sets %>">
+    </div>
+
+    <div class="type">
+        <label>#Reps</label>
+        <input type="number" name="reps" value="<%= foundExercises.reps %>">
+    </div>
 
     <button type="submit">Update Exercise</button>
 </form>
+
+</div>
