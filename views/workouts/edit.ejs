@@ -15,13 +15,32 @@
         <div class="type">
         <label>Workout Type:</label>
         <select name="workoutType">
-            <option value="Legs">Legs</option>
-            <option value="Back">Back</option>
-            <option value="Shoulders">Shoulders</option>
-            <option value="Biceps">Biceps</option>
-            <option value="Triceps">Triceps</option>
-            <option value="Chest">Chest</option>
-        </select>
+
+    <option value="Legs" <%= workout.workoutType === "Legs" ? "selected" : "" %>>
+        Legs
+    </option>
+
+    <option value="Back" <%= workout.workoutType === "Back" ? "selected" : "" %>>
+        Back
+    </option>
+
+    <option value="Shoulders" <%= workout.workoutType === "Shoulders" ? "selected" : "" %>>
+        Shoulders
+    </option>
+
+    <option value="Biceps" <%= workout.workoutType === "Biceps" ? "selected" : "" %>>
+        Biceps
+    </option>
+
+    <option value="Triceps" <%= workout.workoutType === "Triceps" ? "selected" : "" %>>
+        Triceps
+    </option>
+
+    <option value="Chest" <%= workout.workoutType === "Chest" ? "selected" : "" %>>
+        Chest
+    </option>
+
+</select>
         </div>
 
         <div class="check">
