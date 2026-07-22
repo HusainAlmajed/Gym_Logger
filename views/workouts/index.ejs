@@ -1,15 +1,41 @@
-<title>Workout List</title>
-<h1>My Workouts</h1>
-<ul>
-  <% workoutData.forEach(workout => { %>
-    <li>
-      <a href="/workouts/<%= workout._id %>">
-        <%= workout.workoutType %>
-        -
-        <%= workout.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: '2-digit' }) %>   
-    </a>
-    </li>
-  <% }) %>
-</ul>
+<%- include('../partials/nav') %>
 
-<a href="/workouts/new">Add a Workout</a>
+<link rel="stylesheet" href="/stylesheets/workouts.css">
+
+<div class="container">
+
+  <div class="header">
+    <h1>My Workouts</h1>
+    <a href="/workouts/new" class="btn primary">+ Add Workout</a>
+  </div>
+  
+  <% if (workoutData.length === 0) { %>
+    <p class="empty">No workouts yet. Start logging</p>
+  <% } else { %>
+    <ul class="workout-list">
+      <% workoutData.forEach(workout => { %>
+        <li class="workout-card">
+          <a href="/workouts/<%= workout._id %>" class="card-link">
+
+            <div class="card-left">
+              <h2><%= workout.workoutType %></h2>
+              <p>
+                <%= workout.date.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'numeric',
+                  year: '2-digit'
+                }) %>
+              </p>
+            </div>
+
+            <div class="card-right">
+              →
+            </div>
+
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+</div>

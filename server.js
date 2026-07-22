@@ -92,8 +92,6 @@ app.get('/dashboard', async (req, res) => {
         .sort({ date: -1})
         .limit(5)
 
-    console.log('recent' , recentWorkouts)
-
     res.render('dashboard.ejs' , {
         user: req.session.user,
         recentWorkouts: recentWorkouts,
