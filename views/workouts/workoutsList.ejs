@@ -14,8 +14,9 @@
 
 <a href="/workouts/<%= foundWorkout._id %>/exercises/new">➕ Add Another Exercise</a>
 <a href="/workouts/<%= foundWorkout._id %>/edit">Edit Workout</a>
-<form action="/workouts/<%= foundWorkout._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-</form>
+<a href="/workouts/<%= foundWorkout._id %>/delete">
+    <button type="button">Delete</button>
+</a>
 
 <a href="/workouts">Workouts List</a>
+

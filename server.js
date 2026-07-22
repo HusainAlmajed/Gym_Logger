@@ -66,6 +66,7 @@ app.get('/workouts', isSignedIn, workoutCtrl.index)
 app.get('/workouts/:workoutId', isSignedIn, workoutCtrl.workoutView)
 app.get('/workouts/:workoutId/edit' , isSignedIn , workoutCtrl.editWorkout)
 app.put('/workouts/:workoutId' , isSignedIn , workoutCtrl.updateWorkout)
+app.get('/workouts/:workoutId/delete' , isSignedIn , workoutCtrl.confirmDelete)
 app.delete('/workouts/:workoutId' , workoutCtrl.deleteWorkout)
 
 

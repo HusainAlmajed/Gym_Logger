@@ -71,6 +71,15 @@ const editWorkout = async (req , res) => {
 
 }
 
+const confirmDelete = async (req , res) => {
+    const foundWorkout = await Workouts.findById(req.params.workoutId)
+
+    res.render('workouts/confirm.ejs' , {
+        foundWorkout: foundWorkout,
+    })
+
+}
+
 const deleteWorkout = async (req , res) => {
     const foundWorkout = await Workouts.findById(req.params.workoutId)
 
@@ -90,5 +99,6 @@ module.exports = {
     editWorkout,
     updateWorkout,
     deleteWorkout,
+    confirmDelete,
 
 }
