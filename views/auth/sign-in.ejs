@@ -1,23 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/signInPage.css">
-    <title>SIgn In</title>
+    <title>Sign In</title>
 </head>
 <body>
-    <div class="sign-inBox">
-    <h1>Sign In</h1>
-    <form action="/auth/sign-in" method="POST">
-        Username:
-        <input type="text" name="username" required/>
-        Password:
-        <input type="password" name="password" required/>
-        <button type="submit">Sign In</button>
-    </form>
+<div class="page">
 
-    <a href="/auth/sign-up">Sign Up</a>
+    <div class="sign-inBox">
+        <h1>Welcome Back</h1>
+        <p>Sign in to continue</p>
+
+        <form action="/auth/sign-in" method="POST">
+            Username:
+            <input type="text" name="username" required/>
+
+            Password:
+            <input type="password" name="password" required/>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <a href="/auth/sign-up">New here? Create an account</a>
+    </div>
+
+    <!-- for the image -->
+    <div class="picture">
+        <img src="/images/IMG_5960.jpeg" alt="Hefty Smurf" />
+    </div>
+
 </div>
 
 </body>

@@ -1,3 +1,5 @@
+<%- include('../partials/nav') %>
+
 <h1><%= foundWorkout.workoutType %></h1>
 <p><%= foundWorkout.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: '2-digit' }) %>   
 <p>Workout status: <%= foundWorkout.isDone %></p>
