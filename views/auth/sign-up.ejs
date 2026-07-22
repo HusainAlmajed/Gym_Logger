@@ -10,13 +10,13 @@
 
     <form action="/auth/sign-up" method="POST">
         Username:
-        <input type="text" name="username" />
+        <input type="text" name="username" required/>
 
         Password:
-        <input type="password" name="password" />
+        <input type="password" name="password" minlength="6" required/>
 
         Confirm Password:
-        <input type="password" name="confirmPassword" />
+        <input type="password" name="confirmPassword" minlength="6" required/>
         <button type="submit">Sign Up</button>
     </form>
 
