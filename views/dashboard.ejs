@@ -5,11 +5,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
     <title>Dashboard</title>
 </head>
 <body>
-    <h1><%= user.username %>'s dashboard</h1>
-    <a href="workouts/new">Add workout</a>
-    <a href="workouts">Workout List</a>
+
+<div class="container">
+
+    <h1 class="title">Welcome back, <span><%= user.username %></span></h1>
+
+    <div class="actions">
+        <a href="/workouts/new" class="btn primary">+ Add Workout</a>
+        <a href="/workouts" class="btn secondary">View Workouts</a>
+    </div>
+
+   <div class="card">
+  <h2>Your Progress</h2>
+
+  <% if (recentWorkouts.length === 0) { %>
+    <p>You don't have any workouts yet. Start tracking to see stats and improvements over time.</p>
+  <% } else { %>
+    <ul class="recentWorkouts">
+      <% recentWorkouts.forEach(workout => { %>
+        <li>
+          <strong><%= workout.workoutType %></strong>
+          <%= workout.date.toDateString()%>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</div>
+
+</div>
 </body>
 </html>

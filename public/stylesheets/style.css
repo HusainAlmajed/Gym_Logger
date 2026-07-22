@@ -1,3 +1,54 @@
 body {
-    background-color: antiquewhite;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: antiquewhite;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #1f3b57;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: orange;
+}
+
+.signUp {
+  background-color: orange;
+  color: white !important;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #1f3b57;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #162a3f;
+}
+
+form {
+  margin: 0;
 }

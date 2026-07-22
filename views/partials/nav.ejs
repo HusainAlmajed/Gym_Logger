@@ -1,15 +1,18 @@
 <link rel="stylesheet" href="/stylesheets/style.css">
 <nav>
-  <a href="/">Home</a>
-
+    <div class="logo">GYM LOGGER</div>
+<div class="links">
   <% if (user) { %>
     <a href="/workouts">All Workouts</a>
     <a href="/workouts/new">Add a Workout</a>
-    <a href="/users/profile">My Profile</a>
+    <a href="/">Home</a>
 <form action="/auth/sign-out?_method=DELETE" method="POST">
   <button type="submit">Sign Out</button>
 </form>  <% } else { %>
-    <a href="/auth/sign-in">Sign In</a>
-    <a href="/auth/sign-up">Sign Up</a>
+    <a href="/auth/sign-in" class="signIn">Sign In</a>
+    <a href="/auth/sign-up" class="signUp">Sign Up</a>
   <% } %>
+</div>
 </nav>
+
+<hr>

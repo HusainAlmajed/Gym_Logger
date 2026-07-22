@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: antiquewhite;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 36px;
+    color: #1f3b57;
+    margin-bottom: 30px;
+}
+
+.title span {
+    color: orange;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.primary {
+    background-color: orange;
+    color: white;
+}
+
+.primary:hover {
+    background-color: #e69500;
+}
+
+.secondary {
+    background-color: #1f3b57;
+    color: white;
+}
+
+.secondary:hover {
+    background-color: #162a3f;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1f3b57;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #1f3b57;
+}
+
+.card p {
+    color: #555;
+}
+
+.recent-workouts {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.recentWorkouts li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border-left: 4px solid orange;
+}

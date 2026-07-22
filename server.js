@@ -3,6 +3,8 @@ dotenv.config();
 const express = require("express");
 const app = express();
 
+const Workouts = require ('./models/workout.js')
+
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
@@ -83,8 +85,18 @@ app.get('/dashboard', async (req, res) => {
     if (!req.session.user){
         return res.redirect('/auth/sign-in')
     }
-    res.render('dashboard.ejs', {
-        user: req.session.user
+
+    const recentWorkouts = await Workouts.find({
+        owner: req.session.user._id
+    })
+        .sort({ date: -1})
+        .limit(5)
+
+    console.log('recent' , recentWorkouts)
+
+    res.render('dashboard.ejs' , {
+        user: req.session.user,
+        recentWorkouts: recentWorkouts,
     })
 })
 
