@@ -1,13 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/newForm.css">
     <title>New Workout</title>
 </head>
 <body>
-    <form action="/workouts" method="POST">
+<div class="box">
+    <form action="/workouts" method="POST" class="formBox">
 
+        <h1>Create Workout</h1>
+
+        <div class="type">
         <label>Workout Type:</label>
         <select name="workoutType">
             <option value="Legs">Legs</option>
@@ -17,16 +23,23 @@
             <option value="Triceps">Triceps</option>
             <option value="Chest">Chest</option>
         </select>
-        <!-- <input type="text" name="workoutType"> -->
+        </div>
+        
+        <div class="check">
+            <label>
+                <input type="checkbox" name="isDone">
+                Mark as completed
+            </label>
+        </div>
 
-        <label>Done:</label>
-        <input type="checkbox" name="isDone">
-
-        <label>Date:</label>
-        <input type="date" name="date" required>
+        <div class="date">
+            <label>Date:</label>
+            <input type="date" name="date" required>
+        </div>
 
         <button type="submit">Add Workout</button>
 
     </form>
+</div>
 </body>
 </html>
