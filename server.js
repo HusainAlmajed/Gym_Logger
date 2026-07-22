@@ -98,10 +98,6 @@ app.get('/dashboard', async (req, res) => {
     })
 })
 
-app.get('/instructions' , (req , res) => {
-    res.send('WORKING')
-})
-
 // This should be at the end, where if were not matching any of the routes above
 // This will appear
 app.get('/*splat' , (req , res) => {
