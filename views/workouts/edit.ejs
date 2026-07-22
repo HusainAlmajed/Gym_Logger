@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/newForm.css">
     <title>Edit Workout</title>
 </head>
 <body>
-    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+<div class="box">
+    <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST" class="formBox">
 
+        <h1>Edit <%= workout.workoutType %> Workout</h1>
+
+        <div class="type">
         <label>Workout Type:</label>
         <select name="workoutType">
             <option value="Legs">Legs</option>
@@ -17,16 +22,22 @@
             <option value="Triceps">Triceps</option>
             <option value="Chest">Chest</option>
         </select>
-        <!-- <input type="text" name="workoutType"> -->
+        </div>
 
-        <label>Done:</label>
-        <input type="checkbox" name="isDone" <%= workout.isDone ? 'checked' : '' %>>
-
+        <div class="check">
+            <label>
+                <input type="checkbox" name="isDone" <%= workout.isDone ? 'checked' : '' %>>
+                Mark as completed
+            </label>
+        </div>
+        
+        <div class="date">
         <label>Date:</label>
         <input type="date" name="date" value="<%= workout.date.toISOString().split('T')[0] %>">
-
+    </div>
         <button type="submit">Update Workout</button>
 
     </form>
+</div>
 </body>
 </html>
