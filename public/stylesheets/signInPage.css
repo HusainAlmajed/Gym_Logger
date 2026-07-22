@@ -1,0 +1,37 @@
+body {
+    background-color: antiquewhite;
+    text-align: center;
+    color: aliceblue;
+}
+
+div {
+    margin: auto;
+    margin-top: 60px;
+    /* margin: 20px; */
+    width: 1100px;
+    height: 600px;
+    /* display: flex; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    background-color: rebeccapurple;
+    border-radius: 40px;
+}
+
+h1 {
+    display: flex;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self:flex-end;
+    gap: 10px;
+}
+
+input {
+
+}
